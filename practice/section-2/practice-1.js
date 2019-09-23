@@ -1,5 +1,15 @@
 'use strict';
 
 function countSameElements(collection) {
-  return 'Implement the practice require, and begin changing code in this row';
+  let counts = {};
+  let results = [];
+  collection.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
+
+  for (let item in counts) {
+    let result = {};
+    result.key = item;
+    result.count = counts[item];
+    results.push(result);
+  }
+  return results;
 }
